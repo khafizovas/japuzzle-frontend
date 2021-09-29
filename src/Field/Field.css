@@ -1,0 +1,14 @@
+#field {
+	margin: 0 auto;
+
+	width: fit-content;
+
+	background: lightblue;
+}
+
+td {
+	width: 2em;
+	height: 2em;
+
+	border: solid;
+}
