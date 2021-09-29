@@ -1,0 +1,12 @@
+#game-input-field {
+	background: lightcoral;
+}
+
+.game-cell {
+	width: 2em;
+	height: 2em;
+
+	border: solid;
+
+	background: lightgoldenrodyellow;
+}

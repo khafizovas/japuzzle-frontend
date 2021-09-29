@@ -1,4 +1,5 @@
 import './Field.css';
+import InputField from '../InputField/InputField';
 
 const Field = (props) => {
 	return (
@@ -11,17 +12,7 @@ const Field = (props) => {
 				<tr>
 					<td></td>
 					<td>
-						<table id='game-input-field'>
-							<tbody>
-								{[...Array(props.size.height)].map((_, i) => (
-									<tr key={i}>
-										{[...Array(props.size.width)].map((_, j) => (
-											<td key={i * props.size.width + j} class='game-cell'></td>
-										))}
-									</tr>
-								))}
-							</tbody>
-						</table>
+						<InputField size={props.size} />
 					</td>
 				</tr>
 			</tbody>
