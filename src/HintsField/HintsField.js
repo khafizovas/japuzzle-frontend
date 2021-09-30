@@ -8,19 +8,25 @@ const HintsField = (props) => {
 
 	const hints =
 		props.type === 'rows'
-			? props.hints
+			? props.hints.map((hintsRow) =>
+					Array(maxHintsCount - hintsRow.length)
+						.fill('')
+						.concat(hintsRow)
+			  )
 			: props.type === 'columns'
-			? [...Array(maxHintsCount)].map((_, colIndex) =>
-					props.hints.map((column) => column[colIndex])
+			? [...Array(maxHintsCount)].map((_, rowIndex) =>
+					props.hints.map(
+						(column) => column[column.length - (maxHintsCount - rowIndex)] || ''
+					)
 			  )
 			: null;
 
 	return (
 		<table id='game-hints-field'>
 			<tbody>
-				{hints.map((hintsRow, i) => (
+				{hints.map((hintsPart, i) => (
 					<tr key={i}>
-						{hintsRow.map((hint, j) => (
+						{hintsPart.map((hint, j) => (
 							<td key={i * j + j} className='game-hint-cell'>
 								{hint}
 							</td>
