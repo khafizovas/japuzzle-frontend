@@ -1,0 +1,10 @@
+.game-input-cell {
+	width: 2em;
+	height: 2em;
+
+	border: solid;
+
+	background: lightgoldenrodyellow;
+
+	cursor: pointer;
+}

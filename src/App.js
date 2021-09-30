@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import Field from './Field/Field';
 
 const App = () => {
@@ -11,6 +12,10 @@ const App = () => {
 			columns: [[1, 1], [5], [1, 1], [5], [1, 1]],
 		},
 	};
+
+	const [solution, setSolution] = useState(
+		Array(task.size.height).fill(Array(task.size.width).fill(0))
+	);
 
 	return <Field size={task.size} hints={task.hints} />;
 };

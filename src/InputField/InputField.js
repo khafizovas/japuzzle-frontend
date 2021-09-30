@@ -1,3 +1,4 @@
+import InputCell from '../InputCell/InputCell';
 import './InputField.css';
 
 const InputField = (props) => {
@@ -7,7 +8,7 @@ const InputField = (props) => {
 				{[...Array(props.height)].map((_, i) => (
 					<tr key={i}>
 						{[...Array(props.width)].map((_, j) => (
-							<td key={i * props.width + j} className='game-input-cell'></td>
+							<InputCell key={i * props.width + j} x={i} y={j} />
 						))}
 					</tr>
 				))}
