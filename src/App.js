@@ -47,12 +47,10 @@ const App = () => {
 	};
 
 	const [solution, setSolution] = useState(
-		Array(taskSize.height).fill(Array(taskSize.width).fill(0))
+		Array(taskSize.height).fill(Array(taskSize.width).fill(''))
 	);
 
-	// Hardcoded
-	// TODO Palette component and using of state setter in it
-	const [selectedColor, setSelectedColor] = useState('#000000');
+	const [selectedColor, setSelectedColor] = useState('');
 
 	const changeSolution = (x, y) => {
 		const newSolution = JSON.parse(JSON.stringify(solution));
@@ -64,8 +62,11 @@ const App = () => {
 	return (
 		<Field
 			size={taskSize}
+			colors={task.colors}
 			hints={task.hints}
 			curSolution={solution}
+			selectColor={setSelectedColor}
+			selectedColor={selectedColor}
 			changeSolution={changeSolution}
 		/>
 	);
