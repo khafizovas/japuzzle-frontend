@@ -4,10 +4,10 @@ const InputField = (props) => {
 	return (
 		<table id='game-input-field'>
 			<tbody>
-				{[...Array(props.size.height)].map((_, i) => (
+				{[...Array(props.height)].map((_, i) => (
 					<tr key={i}>
-						{[...Array(props.size.width)].map((_, j) => (
-							<td key={i * props.size.width + j} className='game-cell'></td>
+						{[...Array(props.width)].map((_, j) => (
+							<td key={i * props.width + j} className='game-input-cell'></td>
 						))}
 					</tr>
 				))}

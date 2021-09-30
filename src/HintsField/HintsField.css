@@ -1,0 +1,12 @@
+#game-hints-field {
+	background: lightgreen;
+}
+
+.game-hint-cell {
+	width: 2em;
+	height: 2em;
+
+	border: solid;
+
+	background: lightpink;
+}

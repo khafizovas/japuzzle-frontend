@@ -1,5 +1,6 @@
 import './Field.css';
 import InputField from '../InputField/InputField';
+import HintsField from '../HintsField/HintsField';
 
 const Field = (props) => {
 	return (
@@ -7,12 +8,16 @@ const Field = (props) => {
 			<tbody>
 				<tr>
 					<td></td>
-					<td></td>
+					<td>
+						<HintsField type='columns' hints={props.hints.columns} />
+					</td>
 				</tr>
 				<tr>
-					<td></td>
 					<td>
-						<InputField size={props.size} />
+						<HintsField type='rows' hints={props.hints.rows} />
+					</td>
+					<td>
+						<InputField width={props.size.width} height={props.size.height} />
 					</td>
 				</tr>
 			</tbody>
