@@ -8,3 +8,7 @@
 
 	cursor: pointer;
 }
+
+.game-input-cell:hover {
+	box-shadow: inset 0em 0em 0.2em 0.2em rgba(0, 0, 0, 0.5);
+}

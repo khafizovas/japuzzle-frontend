@@ -3,21 +3,54 @@ import Field from './Field/Field';
 
 const App = () => {
 	const task = {
-		size: {
-			width: 5,
-			height: 5,
-		},
+		id: 'sampleID',
+		colors: ['#000000'],
 		hints: {
-			rows: [[1, 1], [5], [1, 1], [5], [1, 1]],
-			columns: [[1, 1], [5], [1, 1], [5], [1, 1]],
+			rows: [
+				[
+					{ color: '#ffffff', count: 1 },
+					{ color: '#000000', count: 1 },
+				],
+				[{ color: '#000000', count: 5 }],
+				[
+					{ color: '#000000', count: 1 },
+					{ color: '#000000', count: 1 },
+				],
+				[{ color: '#000000', count: 5 }],
+				[
+					{ color: '#000000', count: 1 },
+					{ color: '#000000', count: 1 },
+				],
+			],
+			columns: [
+				[
+					{ color: '#000000', count: 1 },
+					{ color: '#000000', count: 1 },
+				],
+				[{ color: '#000000', count: 5 }],
+				[
+					{ color: '#000000', count: 1 },
+					{ color: '#000000', count: 1 },
+				],
+				[{ color: '#000000', count: 5 }],
+				[
+					{ color: '#000000', count: 1 },
+					{ color: '#000000', count: 1 },
+				],
+			],
 		},
 	};
 
+	const taskSize = {
+		height: task.hints.rows.length,
+		width: task.hints.columns.length,
+	};
+
 	const [solution, setSolution] = useState(
-		Array(task.size.height).fill(Array(task.size.width).fill(0))
+		Array(taskSize.height).fill(Array(taskSize.width).fill(0))
 	);
 
-	return <Field size={task.size} hints={task.hints} />;
+	return <Field size={taskSize} hints={task.hints} />;
 };
 
 export default App;

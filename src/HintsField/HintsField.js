@@ -27,8 +27,11 @@ const HintsField = (props) => {
 				{hints.map((hintsPart, i) => (
 					<tr key={i}>
 						{hintsPart.map((hint, j) => (
-							<td key={i * j + j} className='game-hint-cell'>
-								{hint}
+							<td
+								key={i * j + j}
+								className='game-hint-cell'
+								style={{ color: hint.color }}>
+								{hint.count}
 							</td>
 						))}
 					</tr>

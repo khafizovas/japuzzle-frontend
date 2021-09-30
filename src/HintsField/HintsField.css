@@ -6,7 +6,9 @@
 	width: 2em;
 	height: 2em;
 
-	border: solid;
-
+	border: solid #000;
 	background: lightpink;
+
+	text-align: center;
+	font-weight: bold;
 }
