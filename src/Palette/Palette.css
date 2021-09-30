@@ -1,3 +1,7 @@
+#palette {
+	background: lightseagreen;
+}
+
 .palette-cell {
 	display: inline-block;
 

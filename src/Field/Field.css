@@ -5,3 +5,7 @@
 
 	background: lightblue;
 }
+
+table {
+	display: inline-block;
+}
