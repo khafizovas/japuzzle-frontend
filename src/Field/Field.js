@@ -17,7 +17,12 @@ const Field = (props) => {
 						<HintsField type='rows' hints={props.hints.rows} />
 					</td>
 					<td>
-						<InputField width={props.size.width} height={props.size.height} />
+						<InputField
+							width={props.size.width}
+							height={props.size.height}
+							curSolution={props.curSolution}
+							changeSolution={props.changeSolution}
+						/>
 					</td>
 				</tr>
 			</tbody>

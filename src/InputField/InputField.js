@@ -8,7 +8,13 @@ const InputField = (props) => {
 				{[...Array(props.height)].map((_, i) => (
 					<tr key={i}>
 						{[...Array(props.width)].map((_, j) => (
-							<InputCell key={i * props.width + j} x={i} y={j} />
+							<InputCell
+								key={i * props.width + j}
+								x={i}
+								y={j}
+								color={props.curSolution[i][j]}
+								paintCell={props.changeSolution}
+							/>
 						))}
 					</tr>
 				))}

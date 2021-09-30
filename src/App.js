@@ -54,15 +54,20 @@ const App = () => {
 	// TODO Palette component and using of state setter in it
 	const [selectedColor, setSelectedColor] = useState('#000000');
 
-	const changeSolution = (coordinate) => {
+	const changeSolution = (x, y) => {
 		const newSolution = JSON.parse(JSON.stringify(solution));
-		newSolution[coordinate.x][coordinate.y] = selectedColor;
+		newSolution[x][y] = selectedColor;
 
 		setSolution(newSolution);
 	};
 
 	return (
-		<Field size={taskSize} hints={task.hints} changeSolution={changeSolution} />
+		<Field
+			size={taskSize}
+			hints={task.hints}
+			curSolution={solution}
+			changeSolution={changeSolution}
+		/>
 	);
 };
 
