@@ -1,4 +1,5 @@
 import InputCell from '../InputCell/InputCell';
+
 import './InputField.css';
 
 const InputField = (props) => {

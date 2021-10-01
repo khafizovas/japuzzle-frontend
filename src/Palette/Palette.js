@@ -3,7 +3,6 @@ import './Palette.css';
 const Palette = (props) => {
 	return (
 		<table id='palette'>
-			<caption>Available colors</caption>
 			<tbody>
 				<tr>
 					<td

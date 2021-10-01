@@ -1,24 +1,22 @@
 #palette {
-	padding: 0.5%;
+	margin: 2% auto;
 
-	background: lightseagreen;
-}
-
-#palette caption {
-	color: white;
+	background-color: lightcyan;
 }
 
 .palette-cell {
-	width: 1.5em;
-	height: 1.5em;
+	width: 2vw;
+	height: 2vw;
 
 	border: solid;
-	background: lightgray;
+	background: lightgoldenrodyellow;
 
 	text-align: center;
+	font-weight: bold;
+
 	cursor: pointer;
 }
 
 #selected-color {
-	border: solid 0.2em lightsalmon;
+	border: solid 0.2em lightcoral;
 }

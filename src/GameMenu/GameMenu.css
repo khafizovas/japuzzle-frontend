@@ -1,17 +1,19 @@
 #game-menu {
-	background: lightyellow;
+	padding: 5%;
 
-	text-align: center;
+	background: lightcyan;
 }
 
 #game-menu button {
-	margin: 2%;
-	padding: 0.3em;
+	display: block;
+
+	margin: 5% auto;
+	padding: 5%;
 
 	cursor: pointer;
 
-	background: lightsteelblue;
-	border: solid steelblue;
+	background: lightpink;
+	border: solid;
 }
 
 #game-menu button:hover {
