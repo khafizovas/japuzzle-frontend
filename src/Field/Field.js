@@ -38,7 +38,10 @@ const Field = (props) => {
 					selectColor={props.selectColor}
 				/>
 
-				<GameMenu checkSolution={props.checkSolution} />
+				<GameMenu
+					checkSolution={props.checkSolution}
+					resetGame={props.resetGame}
+				/>
 			</aside>
 		</div>
 	);

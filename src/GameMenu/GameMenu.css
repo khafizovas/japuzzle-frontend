@@ -1,9 +1,12 @@
 #game-menu {
 	background: lightyellow;
+
+	text-align: center;
 }
 
 #game-menu button {
-	padding: 1%;
+	margin: 2%;
+	padding: 0.3em;
 
 	cursor: pointer;
 

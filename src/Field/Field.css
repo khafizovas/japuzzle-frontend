@@ -6,7 +6,7 @@
 	background: lightblue;
 }
 
-table {
+#game-field table {
 	display: inline-block;
 }
 
@@ -18,6 +18,8 @@ table {
 	margin-left: 5%;
 
 	padding: 0.5%;
+
+	text-align: center;
 
 	background: lightskyblue;
 }

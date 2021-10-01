@@ -63,6 +63,10 @@ const App = () => {
 		console.log('Check solution:', solution);
 	};
 
+	const resetGame = () => {
+		setSolution(Array(taskSize.height).fill(Array(taskSize.width).fill(null)));
+	};
+
 	return (
 		<Field
 			size={taskSize}
@@ -73,6 +77,7 @@ const App = () => {
 			selectedColor={selectedColor}
 			changeSolution={changeSolution}
 			checkSolution={checkSolution}
+			resetGame={resetGame}
 		/>
 	);
 };
