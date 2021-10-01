@@ -2,6 +2,7 @@ import './Field.css';
 import InputField from '../InputField/InputField';
 import HintsField from '../HintsField/HintsField';
 import Palette from '../Palette/Palette';
+import GameMenu from '../GameMenu/GameMenu';
 
 const Field = (props) => {
 	return (
@@ -36,6 +37,8 @@ const Field = (props) => {
 					colors={props.colors}
 					selectColor={props.selectColor}
 				/>
+
+				<GameMenu checkSolution={props.checkSolution} />
 			</aside>
 		</div>
 	);

@@ -1,0 +1,16 @@
+#game-menu {
+	background: lightyellow;
+}
+
+#game-menu button {
+	padding: 1%;
+
+	cursor: pointer;
+
+	background: lightsteelblue;
+	border: solid steelblue;
+}
+
+#game-menu button:hover {
+	box-shadow: inset 0em 0em 0.5em 0.5em rgba(0, 0, 0, 0.3);
+}

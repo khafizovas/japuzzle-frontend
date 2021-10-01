@@ -8,8 +8,8 @@ const Palette = (props) => {
 				<tr>
 					<td
 						className='palette-cell'
-						id={props.selectedColor === '' ? 'selected-color' : ''}
-						onClick={() => props.selectColor('')}>
+						id={props.selectedColor === null ? 'selected-color' : ''}
+						onClick={() => props.selectColor(null)}>
 						X
 					</td>
 					{props.colors.map((color, i) => (

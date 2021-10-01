@@ -47,16 +47,20 @@ const App = () => {
 	};
 
 	const [solution, setSolution] = useState(
-		Array(taskSize.height).fill(Array(taskSize.width).fill(''))
+		Array(taskSize.height).fill(Array(taskSize.width).fill(null))
 	);
 
-	const [selectedColor, setSelectedColor] = useState('');
+	const [selectedColor, setSelectedColor] = useState(null);
 
 	const changeSolution = (x, y) => {
 		const newSolution = JSON.parse(JSON.stringify(solution));
 		newSolution[x][y] = selectedColor;
 
 		setSolution(newSolution);
+	};
+
+	const checkSolution = () => {
+		console.log('Check solution:', solution);
 	};
 
 	return (
@@ -68,6 +72,7 @@ const App = () => {
 			selectColor={setSelectedColor}
 			selectedColor={selectedColor}
 			changeSolution={changeSolution}
+			checkSolution={checkSolution}
 		/>
 	);
 };
