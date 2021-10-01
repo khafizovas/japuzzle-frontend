@@ -1,11 +1,21 @@
 #game-field {
 	margin: 0 auto;
 
-	width: fit-content;
+	width: 50%;
 
 	background: lightblue;
 }
 
 table {
 	display: inline-block;
+}
+
+.sidebar {
+	display: inline-block;
+	position: absolute;
+
+	top: 5%;
+	margin-left: 5%;
+
+	background: lightskyblue;
 }

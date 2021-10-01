@@ -1,12 +1,19 @@
 #palette {
+	padding: 0.5%;
+
 	background: lightseagreen;
 }
 
-.palette-cell {
-	display: inline-block;
+#palette caption {
+	color: white;
+}
 
+.palette-cell {
 	width: 1.5em;
 	height: 1.5em;
+
+	border: solid;
+	background: lightgray;
 
 	text-align: center;
 	cursor: pointer;

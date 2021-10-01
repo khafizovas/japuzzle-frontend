@@ -30,11 +30,13 @@ const Field = (props) => {
 				</tbody>
 			</table>
 
-			<Palette
-				selectedColor={props.selectedColor}
-				colors={props.colors}
-				selectColor={props.selectColor}
-			/>
+			<aside className='sidebar'>
+				<Palette
+					selectedColor={props.selectedColor}
+					colors={props.colors}
+					selectColor={props.selectColor}
+				/>
+			</aside>
 		</div>
 	);
 };
