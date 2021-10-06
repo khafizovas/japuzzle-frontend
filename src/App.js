@@ -10,12 +10,22 @@ const App = () => {
 	const [user, setUser] = useState(null);
 	const [task, setTask] = useState(null);
 
+	const startGame = () => {
+		fetch(`https://japuzzle-backend.herokuapp.com/api/task/new?user=${user}`)
+			.then((response) => {
+				return response.json();
+			})
+			.then((data) => {
+				setTask(data);
+			});
+	};
+
 	if (!user) {
 		return <Authorization signIn={setUser} />;
 	}
 
 	if (!task) {
-		return <StartMenu user={user} />;
+		return <StartMenu startGame={startGame} />;
 	}
 
 	return <Game />;
