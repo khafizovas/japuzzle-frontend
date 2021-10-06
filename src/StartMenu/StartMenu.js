@@ -1,13 +1,22 @@
 const StartMenu = (props) => {
+	const newGame = (e) => {
+		e.preventDefault();
+
+		const selectedMode = document.querySelector('input:checked').value;
+		props.startGame(selectedMode);
+	};
+
 	return (
 		<div>
-			<form
-				onSubmit={(e) => {
-					e.preventDefault();
-					props.startGame();
-				}}>
+			<form onSubmit={newGame}>
 				<div>
-					<input type='radio' id='modeChoice1' name='mode' value='list' />
+					<input
+						type='radio'
+						id='modeChoice1'
+						name='mode'
+						value='list'
+						defaultChecked
+					/>
 					<label htmlFor='modeChoice1'>All games list</label>
 					<br />
 

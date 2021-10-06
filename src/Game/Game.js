@@ -23,6 +23,7 @@ const Game = (props) => {
 	};
 
 	const checkSolution = () => {
+		// TODO Add solution check request
 		console.log('Check solution:', solution);
 	};
 

@@ -5,30 +5,74 @@ import Game from './Game/Game';
 import StartMenu from './StartMenu/StartMenu';
 
 import './App.css';
+import TasksList from './TasksList/TasksList';
 
 const App = () => {
 	const [user, setUser] = useState(null);
 	const [task, setTask] = useState(null);
+	const [tasks, setTasks] = useState(null);
 
-	const startGame = () => {
-		fetch(`https://japuzzle-backend.herokuapp.com/api/task/new?user=${user}`)
-			.then((response) => {
-				return response.json();
-			})
-			.then((data) => {
-				setTask(data);
-			});
+	const startGame = (mode) => {
+		switch (mode) {
+			case 'list':
+				fetch(
+					`https://japuzzle-backend.herokuapp.com/api/task/list?user=${user}`
+				)
+					.then((response) => {
+						return response.json();
+					})
+					.then((data) => {
+						setTasks(data);
+					})
+					.catch((err) => {
+						console.error(err);
+					});
+				return;
+			case 'random':
+				// TODO Add TaskParamsMenu component
+				fetch(
+					`https://japuzzle-backend.herokuapp.com/api/task/new?user=${user}`
+				)
+					.then((response) => {
+						return response.json();
+					})
+					.then((data) => {
+						setTask(data);
+					})
+					.catch((err) => {
+						console.error(err);
+					});
+
+				return;
+			case 'create':
+				// TODO Add CreateTask component
+				return;
+			default:
+				return;
+		}
 	};
 
 	if (!user) {
 		return <Authorization signIn={setUser} />;
 	}
 
-	if (!task) {
-		return <StartMenu startGame={startGame} />;
+	if (task) {
+		return (
+			<Game
+				task={task}
+				newGame={() => {
+					setTask(null);
+					setTasks(null);
+				}}
+			/>
+		);
 	}
 
-	return <Game task={task} newGame={() => setTask(null)} />;
+	if (tasks) {
+		return <TasksList tasks={tasks} selectTask={setTask} />;
+	}
+
+	return <StartMenu startGame={startGame} />;
 };
 
 export default App;
