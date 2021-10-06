@@ -28,7 +28,7 @@ const App = () => {
 		return <StartMenu startGame={startGame} />;
 	}
 
-	return <Game />;
+	return <Game task={task} newGame={() => setTask(null)} />;
 };
 
 export default App;

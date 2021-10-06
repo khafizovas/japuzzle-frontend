@@ -6,53 +6,11 @@ import GameMenu from '../GameMenu/GameMenu';
 
 import './Game.css';
 
-const Game = () => {
-	const task = {
-		id: 'sampleID',
-		colors: ['#000000'],
-		hints: {
-			rows: [
-				[
-					{ color: '#000000', count: 1 },
-					{ color: '#000000', count: 1 },
-				],
-				[{ color: '#000000', count: 5 }],
-				[
-					{ color: '#000000', count: 1 },
-					{ color: '#000000', count: 1 },
-				],
-				[{ color: '#000000', count: 5 }],
-				[
-					{ color: '#000000', count: 1 },
-					{ color: '#000000', count: 1 },
-				],
-			],
-			columns: [
-				[
-					{ color: '#000000', count: 1 },
-					{ color: '#000000', count: 1 },
-				],
-				[{ color: '#000000', count: 5 }],
-				[
-					{ color: '#000000', count: 1 },
-					{ color: '#000000', count: 1 },
-				],
-				[{ color: '#000000', count: 5 }],
-				[
-					{ color: '#000000', count: 1 },
-					{ color: '#000000', count: 1 },
-				],
-			],
-		},
-	};
-
-	const taskSize = {
-		height: task.hints.rows.length,
-		width: task.hints.columns.length,
-	};
-
+const Game = (props) => {
 	const [solution, setSolution] = useState(
-		Array(taskSize.height).fill(Array(taskSize.width).fill(null))
+		Array(props.task.field.height).fill(
+			Array(props.task.field.width).fill(null)
+		)
 	);
 
 	const [selectedColor, setSelectedColor] = useState(null);
@@ -69,24 +27,21 @@ const Game = () => {
 	};
 
 	const resetGame = () => {
-		setSolution(Array(taskSize.height).fill(Array(taskSize.width).fill(null)));
+		setSolution(
+			Array(props.task.field.height).fill(
+				Array(props.task.field.width).fill(null)
+			)
+		);
 	};
-
-	//
-	// fetch('https://japuzzle-backend.herokuapp.com/api/task/new?user=pojo')
-	// 	.then((response) => {
-	// 		return response.json();
-	// 	})
-	// 	.then((data) => {
-	// 		console.log(data);
-	// 	});
-	//
 
 	return (
 		<div id='game'>
 			<Field
-				size={taskSize}
-				hints={task.hints}
+				size={{
+					height: props.task.field.height,
+					width: props.task.field.width,
+				}}
+				hints={props.task.hints}
 				curSolution={solution}
 				changeSolution={changeSolution}
 				checkSolution={checkSolution}
@@ -95,12 +50,16 @@ const Game = () => {
 
 			<aside className='sidebar'>
 				<Palette
-					colors={task.colors}
+					colors={props.task.field.colors}
 					selectedColor={selectedColor}
 					selectColor={setSelectedColor}
 				/>
 
-				<GameMenu checkSolution={checkSolution} resetGame={resetGame} />
+				<GameMenu
+					checkSolution={checkSolution}
+					resetGame={resetGame}
+					newGame={props.newGame}
+				/>
 			</aside>
 		</div>
 	);
