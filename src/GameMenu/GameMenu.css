@@ -13,7 +13,7 @@
 	cursor: pointer;
 
 	background: lightpink;
-	border: solid;
+	border: solid 0.1rem;
 }
 
 #game-menu button:hover {

@@ -73,13 +73,13 @@ const Game = () => {
 	};
 
 	//
-	fetch('https://japuzzle-backend.herokuapp.com/api/task/new?user=pojo')
-		.then((response) => {
-			return response.json();
-		})
-		.then((data) => {
-			console.log(data);
-		});
+	// fetch('https://japuzzle-backend.herokuapp.com/api/task/new?user=pojo')
+	// 	.then((response) => {
+	// 		return response.json();
+	// 	})
+	// 	.then((data) => {
+	// 		console.log(data);
+	// 	});
 	//
 
 	return (
