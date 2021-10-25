@@ -12,7 +12,7 @@ const App = () => {
 	const [task, setTask] = useState(null);
 	const [tasks, setTasks] = useState(null);
 
-	const startGame = (mode) => {
+	const startGame = (mode, params) => {
 		switch (mode) {
 			case 'list':
 				fetch(
@@ -29,9 +29,8 @@ const App = () => {
 					});
 				return;
 			case 'random':
-				// TODO Add TaskParamsMenu component
 				fetch(
-					`https://japuzzle-backend.herokuapp.com/api/task/new?user=${user}`
+					`https://japuzzle-backend.herokuapp.com/api/task/new?user=${user}&rows=${params[0]}&columns=${params[1]}&colors=${params[2]}`
 				)
 					.then((response) => {
 						return response.json();
@@ -51,6 +50,8 @@ const App = () => {
 				return;
 		}
 	};
+
+	//
 
 	if (!user) {
 		return <Authorization signIn={setUser} />;
