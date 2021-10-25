@@ -7,8 +7,11 @@ const Palette = (props) => {
 				<tr>
 					<td
 						className='palette-cell'
-						id={props.selectedColor === null ? 'selected-color' : ''}
-						onClick={() => props.selectColor(null)}>
+						id={
+							props.selectedColor === props.background ? 'selected-color' : ''
+						}
+						style={{ background: props.background }}
+						onClick={() => props.selectColor(props.background)}>
 						X
 					</td>
 					{props.colors.map((color, i) => (

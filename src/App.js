@@ -60,6 +60,7 @@ const App = () => {
 	if (task) {
 		return (
 			<Game
+				user={user}
 				task={task}
 				newGame={() => {
 					setTask(null);
