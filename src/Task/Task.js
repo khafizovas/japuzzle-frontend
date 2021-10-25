@@ -1,21 +1,16 @@
-// TODO Remove inline styles
+import './Task.css';
+
 const Task = (props) => {
 	return (
-		<div>
-			<p style={{ textTransform: 'capitalize' }}>
-				{!props.info.solved ? 'un' : ''}solved
-			</p>
+		<div className='task'>
+			<p className='isSolved'>{!props.info.solved ? 'un' : ''}solved</p>
 			<p>
 				Size: {props.info.field.width}x{props.info.field.height}
 			</p>
 			<p>Colors count: {props.info.field.colors.length}</p>
+
 			{props.info.solved ? (
-				<table
-					style={{
-						margin: '0 auto 10% auto',
-						width: 'fit-content',
-						border: 'solid 0.1vw',
-					}}>
+				<table className='task-preview'>
 					<tbody>
 						{[...Array(props.info.field.height)].map((_, i) => (
 							<tr key={i}>
@@ -23,8 +18,6 @@ const Task = (props) => {
 									<td
 										key={i * props.info.field.width + j}
 										style={{
-											width: '1vw',
-											height: '1vw',
 											background: props.info.field.cells[i][j],
 										}}></td>
 								))}
@@ -34,12 +27,12 @@ const Task = (props) => {
 				</table>
 			) : (
 				<div
+					className='unsolved-task-preview'
 					style={{
-						margin: '0 auto 10% auto',
+						background: `${props.info.field['background-color']}`,
 						fontSize: `${props.info.field.width}vw`,
 						width: `${props.info.field.width}vw`,
 						height: `${props.info.field.height}vw`,
-						border: 'solid 0.1vw',
 					}}>
 					?
 				</div>
