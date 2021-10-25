@@ -10,7 +10,7 @@ const Authorization = (props) => {
 		const login = document.querySelector('#user').value;
 
 		fetch(
-			`https://japuzzle-backend.herokuapp.com/api/user/register/?user=${user}`
+			`https://japuzzle-backend.herokuapp.com/api/user/register/?user=${login}`
 		)
 			.then((response) => {
 				return [response.status, response.text()];
