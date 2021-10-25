@@ -1,0 +1,7 @@
+#tasks-list {
+	width: 50%;
+
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+}
