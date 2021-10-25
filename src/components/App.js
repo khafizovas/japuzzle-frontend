@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import Authorization from './Authorization/Authorization';
 
-import Game from './Game/Game';
-import StartMenu from './StartMenu/StartMenu';
-
-import './App.css';
+import Game from './GameTask/Game';
+import StartMenu from './Menus/StartMenu';
+import Authorization from './Menus/Authorization';
 import TasksList from './TasksList/TasksList';
+
+import '../styles/App.css';
 
 const App = () => {
 	const [user, setUser] = useState(null);

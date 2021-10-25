@@ -1,4 +1,4 @@
-import './Palette.css';
+import '../../styles/Palette.css';
 
 const Palette = (props) => {
 	return (

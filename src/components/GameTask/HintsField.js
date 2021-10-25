@@ -1,4 +1,4 @@
-import './HintsField.css';
+import '../../styles/HintsField.css';
 
 const HintsField = (props) => {
 	const maxHintsCount = props.hints.reduce(

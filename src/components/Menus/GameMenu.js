@@ -1,4 +1,4 @@
-import './GameMenu.css';
+import '../../styles/GameMenu.css';
 
 const GameMenu = (props) => {
 	return (

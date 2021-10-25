@@ -1,4 +1,4 @@
-import './Task.css';
+import '../../styles/Task.css';
 
 const Task = (props) => {
 	return (

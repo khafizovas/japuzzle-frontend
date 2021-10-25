@@ -1,7 +1,7 @@
-import InputField from '../InputField/InputField';
-import HintsField from '../HintsField/HintsField';
+import InputField from './InputField';
+import HintsField from './HintsField';
 
-import './Field.css';
+import '../../styles/Field.css';
 
 const Field = (props) => {
 	return (

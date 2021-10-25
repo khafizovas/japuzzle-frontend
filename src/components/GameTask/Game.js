@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-import Field from '../Field/Field';
-import Palette from '../Palette/Palette';
-import GameMenu from '../GameMenu/GameMenu';
+import Field from './Field';
+import Palette from './Palette';
+import GameMenu from '../Menus/GameMenu';
 
-import './Game.css';
+import '../../styles/Game.css';
 
 const Game = (props) => {
 	const [selectedColor, setSelectedColor] = useState(null);

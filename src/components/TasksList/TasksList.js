@@ -1,6 +1,6 @@
-import Task from '../Task/Task';
+import Task from './Task';
 
-import './TasksList.css';
+import '../../styles/TasksList.css';
 
 const TasksList = (props) => {
 	return (

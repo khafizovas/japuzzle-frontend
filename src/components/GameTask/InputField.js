@@ -1,6 +1,6 @@
-import InputCell from '../InputCell/InputCell';
+import InputCell from './InputCell';
 
-import './InputField.css';
+import '../../styles/InputField.css';
 
 const InputField = (props) => {
 	return (

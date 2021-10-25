@@ -1,4 +1,4 @@
-import './InputCell.css';
+import '../../styles/InputCell.css';
 
 const InputCell = (props) => {
 	return (
