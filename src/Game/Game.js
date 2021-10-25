@@ -7,13 +7,13 @@ import GameMenu from '../GameMenu/GameMenu';
 import './Game.css';
 
 const Game = (props) => {
+	const [selectedColor, setSelectedColor] = useState(null);
 	const [solution, setSolution] = useState(
 		Array(props.task.field.height).fill(
 			Array(props.task.field.width).fill(props.task.field['background-color'])
 		)
 	);
-
-	const [selectedColor, setSelectedColor] = useState(null);
+	const [isSolved, setIsSolved] = useState(null);
 
 	const changeSolution = (x, y) => {
 		const newSolution = JSON.parse(JSON.stringify(solution));
@@ -23,10 +23,6 @@ const Game = (props) => {
 	};
 
 	const checkSolution = () => {
-		// TODO Add solution check request
-
-		console.log('Check solution:', solution);
-
 		fetch(
 			`https://japuzzle-backend.herokuapp.com/api/task/check/${props.task.id}/?user=${props.user}`,
 			{
@@ -44,7 +40,7 @@ const Game = (props) => {
 				return data;
 			})
 			.then((result) => {
-				console.log(result);
+				setIsSolved(result.correctness);
 			})
 			.catch((err) => {
 				console.error(err);
@@ -59,7 +55,7 @@ const Game = (props) => {
 		);
 	};
 
-	return (
+	return isSolved === null ? (
 		<div id='game'>
 			<Field
 				size={{
@@ -87,6 +83,23 @@ const Game = (props) => {
 					newGame={props.newGame}
 				/>
 			</aside>
+		</div>
+	) : (
+		<div>
+			<p>{isSolved ? 'Victory!' : "You're a looser!!!!!!1111!1!1!!"}</p>
+			<div id='game-menu'>
+				<GameMenu
+					resetGame={() => {
+						setIsSolved(null);
+						resetGame();
+					}}
+					newGame={() => {
+						setIsSolved(null);
+						props.newGame();
+					}}
+					noCheck={true}
+				/>
+			</div>
 		</div>
 	);
 };
