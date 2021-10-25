@@ -54,7 +54,7 @@ const Game = (props) => {
 	const resetGame = () => {
 		setSolution(
 			Array(props.task.field.height).fill(
-				Array(props.task.field.width).fill(null)
+				Array(props.task.field.width).fill(props.task.field['background-color'])
 			)
 		);
 	};
