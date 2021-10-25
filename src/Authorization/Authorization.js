@@ -1,9 +1,8 @@
 import { useState } from 'react';
 
 const Authorization = (props) => {
-	// TODO: remove pojo
-	const [user, setUser] = useState('pojo');
-	const [message, setMessage] = useState('Sample');
+	const [user, setUser] = useState('');
+	const [message, setMessage] = useState('');
 
 	const signIn = (ev) => {
 		ev.preventDefault();
@@ -14,14 +13,16 @@ const Authorization = (props) => {
 			`https://japuzzle-backend.herokuapp.com/api/user/register/?user=${user}`
 		)
 			.then((response) => {
-				console.log(response.status);
-				return [response.status, response.json()];
+				return [response.status, response.text()];
 			})
 			.then(([status, data]) => {
 				if (status === 302 || status === 201) {
 					setUser(login);
-					setMessage(data);
 				}
+				return data;
+			})
+			.then((responseMessage) => {
+				setMessage(responseMessage);
 			})
 			.catch((err) => {
 				console.error(err);
