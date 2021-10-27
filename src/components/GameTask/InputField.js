@@ -1,7 +1,5 @@
 import InputCell from './InputCell';
 
-import '../../styles/InputField.css';
-
 const InputField = (props) => {
 	return (
 		<table id='game-input-field'>

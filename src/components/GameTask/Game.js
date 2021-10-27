@@ -17,7 +17,17 @@ const Game = (props) => {
 
 	const changeSolution = (x, y) => {
 		const newSolution = JSON.parse(JSON.stringify(solution));
-		newSolution[x][y] = selectedColor;
+
+		let newColorInd = selectedColor;
+		if (newColorInd === null) {
+			const tmp = props.task.field.colors.indexOf(solution[x][y]) + 1;
+			newColorInd = tmp === props.task.field.colors.length ? -1 : tmp;
+		}
+
+		newSolution[x][y] =
+			newColorInd === -1
+				? props.task.field['background-color']
+				: props.task.field.colors[newColorInd];
 
 		setSolution(newSolution);
 	};
@@ -57,19 +67,7 @@ const Game = (props) => {
 
 	return isSolved === null ? (
 		<div id='game'>
-			<Field
-				size={{
-					height: props.task.field.height,
-					width: props.task.field.width,
-				}}
-				hints={props.task.hints}
-				curSolution={solution}
-				changeSolution={changeSolution}
-				checkSolution={checkSolution}
-				resetGame={resetGame}
-			/>
-
-			<aside className='sidebar'>
+			<div className='menu'>
 				<Palette
 					background={props.task.field['background-color']}
 					colors={props.task.field.colors}
@@ -82,11 +80,23 @@ const Game = (props) => {
 					resetGame={resetGame}
 					newGame={props.newGame}
 				/>
-			</aside>
+			</div>
+
+			<Field
+				size={{
+					height: props.task.field.height,
+					width: props.task.field.width,
+				}}
+				hints={props.task.hints}
+				curSolution={solution}
+				changeSolution={changeSolution}
+				checkSolution={checkSolution}
+				resetGame={resetGame}
+			/>
 		</div>
 	) : (
 		<div>
-			<p>{isSolved ? 'Victory!' : "You're a looser!!!!!!1111!1!1!!"}</p>
+			<p>{isSolved ? 'Victory!' : "You've lost!"}</p>
 			<div id='game-menu'>
 				<GameMenu
 					resetGame={() => {
