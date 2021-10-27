@@ -1,16 +1,13 @@
-#app-root > #game {
-	display: flex;
-
-	flex-flow: row nowrap;
-	align-items: center;
-	justify-content: space-around;
-}
-
 #game > * {
-	margin: 1%;
+	margin: 1% auto;
 }
 
-.sidebar {
-	padding: 1%;
+.menu {
+	padding: 2%;
 	background: lightblue;
+}
+
+.menu > * {
+	width: fit-content;
+	margin: 0 auto;
 }

@@ -1,4 +1,5 @@
 #palette {
+	width: fit-content;
 	margin: 2% auto;
 
 	background-color: lightcyan;
@@ -8,7 +9,7 @@
 	width: 2vw;
 	height: 2vw;
 
-	border: solid 0.1rem;
+	border: solid 0.2rem;
 	background: lightgoldenrodyellow;
 
 	text-align: center;
@@ -18,5 +19,5 @@
 }
 
 #selected-color {
-	border: solid 0.2em lightcoral;
+	border: solid 0.2rem lightcoral;
 }

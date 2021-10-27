@@ -1,14 +1,11 @@
 #game-menu {
-	padding: 5%;
-
+	white-space: nowrap;
 	background: lightcyan;
 }
 
 #game-menu button {
-	display: block;
-
-	margin: 5% auto;
-	padding: 5%;
+	margin: 1%;
+	padding: 2%;
 
 	cursor: pointer;
 

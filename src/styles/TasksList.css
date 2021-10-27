@@ -1,5 +1,5 @@
 #tasks-list {
-	width: 50%;
+	max-width: 80%;
 
 	display: flex;
 	flex-flow: row wrap;
