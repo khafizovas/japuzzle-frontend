@@ -2,7 +2,7 @@ import '../../styles/Palette.css';
 
 const Palette = (props) => {
 	return (
-		<div>
+		<>
 			<p>
 				You can select (and unselect) a color here or just click a cell to set
 				the next palette color to it.
@@ -36,7 +36,7 @@ const Palette = (props) => {
 					</tr>
 				</tbody>
 			</table>
-		</div>
+		</>
 	);
 };
 

@@ -1,4 +1,6 @@
 #app-root > div {
+	width: fit-content;
+
 	margin: 5% auto;
 
 	padding: 1%;
