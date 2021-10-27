@@ -71,7 +71,13 @@ const App = () => {
 	}
 
 	if (tasks) {
-		return <TasksList tasks={tasks} selectTask={setTask} />;
+		return (
+			<TasksList
+				tasks={tasks}
+				selectTask={setTask}
+				goBack={() => setTasks(null)}
+			/>
+		);
 	}
 
 	return <StartMenu startGame={startGame} />;

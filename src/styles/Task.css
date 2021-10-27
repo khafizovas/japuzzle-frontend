@@ -1,6 +1,7 @@
 .task {
 	border: dashed lightseagreen;
 	padding: 1%;
+	margin: 1%;
 }
 
 .isSolved {

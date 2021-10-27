@@ -8,6 +8,7 @@ const TasksList = (props) => {
 			{props.tasks.map((task, i) => (
 				<Task key={i} info={task} selectTask={props.selectTask} />
 			))}
+			<button onClick={props.goBack}>Go back</button>
 		</div>
 	);
 };
