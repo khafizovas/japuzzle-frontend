@@ -10,7 +10,12 @@ const StartMenu = (props) => {
 		const selectedMode = document.querySelector('input:checked').value;
 
 		if (selectedMode === 'random') {
-			setChildMenu(<NewTaskMenu createTask={createRandomTask} />);
+			setChildMenu(
+				<NewTaskMenu
+					goBack={() => setChildMenu(null)}
+					createTask={createRandomTask}
+				/>
+			);
 
 			return;
 		}

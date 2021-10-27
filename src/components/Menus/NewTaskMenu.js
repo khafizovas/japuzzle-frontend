@@ -34,6 +34,7 @@ const NewTaskMenu = (props) => {
 					<button type='submit'>Submit</button>
 				</div>
 			</form>
+			<button onClick={props.goBack}>Go back</button>
 		</div>
 	);
 };
