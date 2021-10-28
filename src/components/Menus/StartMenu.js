@@ -1,30 +1,45 @@
 import { useState } from 'react';
+
+import RandomTaskMenu from './RandomTaskMenu';
 import NewTaskMenu from './NewTaskMenu';
 
 const StartMenu = (props) => {
 	const [childMenu, setChildMenu] = useState(null);
+	let selectedMode;
 
 	const newGame = (e) => {
 		e.preventDefault();
 
-		const selectedMode = document.querySelector('input:checked').value;
+		selectedMode = document.querySelector('input:checked').value;
 
-		if (selectedMode === 'random') {
-			setChildMenu(
-				<NewTaskMenu
-					goBack={() => setChildMenu(null)}
-					createTask={createRandomTask}
-				/>
-			);
+		switch (selectedMode) {
+			case 'list':
+				props.startGame(selectedMode);
+				break;
+			case 'random':
+				setChildMenu(
+					<RandomTaskMenu
+						goBack={() => setChildMenu(null)}
+						createTask={createTask}
+					/>
+				);
+				break;
+			case 'create':
+				setChildMenu(
+					<NewTaskMenu
+						goBack={() => setChildMenu(null)}
+						createTask={createTask}
+					/>
+				);
+				break;
 
-			return;
+			default:
+				break;
 		}
-
-		props.startGame(selectedMode);
 	};
 
-	const createRandomTask = (params) => {
-		props.startGame('random', params);
+	const createTask = (params) => {
+		props.startGame(selectedMode, params);
 	};
 
 	return (
