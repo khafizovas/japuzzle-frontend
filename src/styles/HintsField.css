@@ -1,11 +1,5 @@
 .game-hint-cell {
-	width: 3vw;
-	height: 3vw;
-
 	border: solid #000 0.1rem;
 	background: lightpink;
-
-	text-align: center;
 	font-weight: bold;
-	font-size: 2vw;
 }

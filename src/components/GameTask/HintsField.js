@@ -22,7 +22,7 @@ const HintsField = (props) => {
 			: null;
 
 	return (
-		<table id='game-hints-field'>
+		<table id='game-hints-field' style={{ fontSize: props.cellSize * 0.5 }}>
 			<tbody>
 				{hints.map((hintsPart, i) => (
 					<tr key={i}>
@@ -30,7 +30,11 @@ const HintsField = (props) => {
 							<td
 								key={i * j + j}
 								className='game-hint-cell'
-								style={{ color: hint.color }}>
+								style={{
+									width: props.cellSize + 'px',
+									height: props.cellSize + 'px',
+									color: hint.color,
+								}}>
 								{hint.count}
 							</td>
 						))}

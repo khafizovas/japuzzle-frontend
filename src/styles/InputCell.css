@@ -1,9 +1,5 @@
 .game-input-cell {
-	width: 3vw;
-	height: 3vw;
-
 	border: solid 0.1rem;
-
 	cursor: pointer;
 }
 

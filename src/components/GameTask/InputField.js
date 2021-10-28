@@ -11,6 +11,7 @@ const InputField = (props) => {
 								key={i * props.width + j}
 								x={i}
 								y={j}
+								size={props.cellSize}
 								color={props.curSolution[i][j]}
 								paintCell={props.changeSolution}
 							/>
