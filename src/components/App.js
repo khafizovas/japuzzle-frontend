@@ -41,10 +41,28 @@ const App = () => {
 					.catch((err) => {
 						console.error(err);
 					});
-
 				return;
 			case 'create':
-				// TODO Add CreateTask component
+				console.log('in create', params);
+				fetch(
+					`https://japuzzle-backend.herokuapp.com/api/task/new?user=${user}&&rows=${params[0][0]}&columns=${params[0][1]}&colors=${params[0][2]}`,
+					{
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+						},
+						body: params[1],
+					}
+				)
+					.then((response) => {
+						return response.json();
+					})
+					.then((data) => {
+						setTask(data);
+					})
+					.catch((err) => {
+						console.error(err);
+					});
 				return;
 			default:
 				return;
