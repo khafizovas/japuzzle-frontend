@@ -4,11 +4,6 @@ import HintsField from './HintsField';
 import '../../styles/Field.css';
 
 const Field = (props) => {
-	const cellSize = Math.floor(
-		(0.2 * document.documentElement.scrollHeight) /
-			Math.max(props.size.width, props.size.height)
-	);
-
 	return (
 		<table id='game-field'>
 			<tbody>
@@ -18,7 +13,7 @@ const Field = (props) => {
 						<HintsField
 							type='columns'
 							hints={props.hints.columns}
-							cellSize={cellSize}
+							cellSize={props.cellSize}
 						/>
 					</td>
 				</tr>
@@ -27,7 +22,7 @@ const Field = (props) => {
 						<HintsField
 							type='rows'
 							hints={props.hints.rows}
-							cellSize={cellSize}
+							cellSize={props.cellSize}
 						/>
 					</td>
 					<td>
@@ -36,7 +31,7 @@ const Field = (props) => {
 							height={props.size.height}
 							curSolution={props.curSolution}
 							changeSolution={props.changeSolution}
-							cellSize={cellSize}
+							cellSize={props.cellSize}
 						/>
 					</td>
 				</tr>

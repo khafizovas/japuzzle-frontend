@@ -7,6 +7,11 @@ import GameMenu from '../Menus/GameMenu';
 import '../../styles/Game.css';
 
 const Game = (props) => {
+	const cellSize = Math.floor(
+		(0.25 * window.innerHeight) /
+			Math.max(props.task.field.width, props.task.field.height)
+	);
+
 	const [selectedColor, setSelectedColor] = useState(null);
 	const [solution, setSolution] = useState(
 		Array(props.task.field.height).fill(
@@ -69,6 +74,7 @@ const Game = (props) => {
 		<div id='game'>
 			<div className='menu'>
 				<Palette
+					cellSize={cellSize}
 					background={props.task.field['background-color']}
 					colors={props.task.field.colors}
 					selectedColor={selectedColor}
@@ -83,6 +89,7 @@ const Game = (props) => {
 			</div>
 
 			<Field
+				cellSize={cellSize}
 				size={{
 					height: props.task.field.height,
 					width: props.task.field.width,

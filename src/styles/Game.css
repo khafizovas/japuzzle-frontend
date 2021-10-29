@@ -1,3 +1,8 @@
+#app-root > #game {
+	width: 80%;
+	height: 80%;
+}
+
 #game > * {
 	margin: 1% auto;
 }

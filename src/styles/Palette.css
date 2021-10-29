@@ -1,21 +1,5 @@
-#palette {
-	width: fit-content;
-	margin: 2% auto;
-
-	background-color: lightcyan;
-}
-
 .palette-cell {
-	width: 2vw;
-	height: 2vw;
-
 	border: solid 0.2rem;
-	background: lightgoldenrodyellow;
-
-	text-align: center;
-	font-weight: bold;
-
-	cursor: pointer;
 }
 
 #selected-color {

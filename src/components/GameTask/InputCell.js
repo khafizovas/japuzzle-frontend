@@ -5,9 +5,8 @@ const InputCell = (props) => {
 		<td
 			className='game-input-cell'
 			style={{
-				width: props.size + 'px',
-				height: props.size + 'px',
-				fontSize: 11,
+				width: props.size,
+				height: props.size,
 				background: props.color || '',
 			}}
 			onClick={() => props.paintCell(props.x, props.y)}></td>

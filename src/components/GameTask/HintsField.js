@@ -31,8 +31,8 @@ const HintsField = (props) => {
 								key={i * j + j}
 								className='game-hint-cell'
 								style={{
-									width: props.cellSize + 'px',
-									height: props.cellSize + 'px',
+									width: props.cellSize,
+									height: props.cellSize,
 									color: hint.color,
 								}}>
 								{hint.count}
