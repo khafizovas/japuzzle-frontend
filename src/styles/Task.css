@@ -8,18 +8,10 @@
 	text-transform: capitalize;
 }
 
-.unsolved-task-preview {
-	margin: 0 auto 10% auto;
-	border: solid 0.1vw;
-}
-
 .task-preview {
 	border-spacing: 0;
 	margin: 0 auto 10% auto;
 	width: fit-content;
-}
-
-.task-preview td {
-	width: 1vw;
-	height: 1vw;
+	height: 10vh;
+	font-size: 3rem;
 }

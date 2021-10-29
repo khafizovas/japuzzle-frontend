@@ -10,7 +10,12 @@ const Task = (props) => {
 			<p>Colors count: {props.info.field.colors.length}</p>
 
 			{props.info.solved ? (
-				<table className='task-preview'>
+				<table
+					className='task-preview'
+					style={{
+						width:
+							(10 * props.info.field.width) / props.info.field.height + 'vh',
+					}}>
 					<tbody>
 						{[...Array(props.info.field.height)].map((_, i) => (
 							<tr key={i}>
@@ -27,12 +32,10 @@ const Task = (props) => {
 				</table>
 			) : (
 				<div
-					className='unsolved-task-preview'
+					className='task-preview'
 					style={{
+						width: '10vh',
 						background: `${props.info.field['background-color']}`,
-						fontSize: `${props.info.field.width}vw`,
-						width: `${props.info.field.width}vw`,
-						height: `${props.info.field.height}vw`,
 					}}>
 					?
 				</div>

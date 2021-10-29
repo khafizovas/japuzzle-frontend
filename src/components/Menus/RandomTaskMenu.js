@@ -29,6 +29,8 @@ const RandomTaskMenu = (props) => {
 					min='2'
 					max='5'
 				/>
+				<br />
+
 				<button type='submit'>Submit</button>
 			</form>
 			<button onClick={props.goBack}>Go back</button>

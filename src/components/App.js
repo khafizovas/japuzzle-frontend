@@ -43,7 +43,6 @@ const App = () => {
 					});
 				return;
 			case 'create':
-				console.log('in create', params);
 				fetch(
 					`https://japuzzle-backend.herokuapp.com/api/task/new?user=${user}&&rows=${params[0][0]}&columns=${params[0][1]}&colors=${params[0][2]}`,
 					{
