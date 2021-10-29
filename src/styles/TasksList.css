@@ -6,7 +6,7 @@
 	justify-content: space-around;
 }
 
-#tasks-list > button {
-	height: fit-content;
-	align-self: center;
+#tasks-goback {
+	display: block;
+	margin: 1% auto;
 }
